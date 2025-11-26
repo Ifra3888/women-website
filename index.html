@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Empowerment & Cyber Security Awareness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        :root {
+            --primary: #8A2BE2;
+            --secondary: #FF69B4;
+            --light: #F8F8FF;
+            --dark: #333333;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(138, 43, 226, 0.7), rgba(255, 105, 180, 0.7)), url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Registration Section */
+        .registration {
+            background: var(--white);
+        }
+
+        .registration-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
+            transform: translateY(-2px);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Threats Section */
+        .threats {
+            background: var(--white);
+        }
+
+        .threats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .threat-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .threat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .threat-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .threat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Tips Section */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tip-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            flex-shrink: 0;
+        }
+
+        .tip-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Resources Section */
+        .resources {
+            background: var(--white);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .resource-card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .resource-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .resource-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .resource-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* AI Assistant Section */
+        .ai-assistant {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 20px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: var(--primary);
+            color: var(--white);
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot-message {
+            background: var(--light);
+            color: var(--dark);
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-logo h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .footer-quote {
+            font-style: italic;
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 3px solid var(--secondary);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            max-width: 600px;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+
+        /* Hidden Chatbot Styles */
+        .bottle-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .bottle {
+            width: 120px;
+            height: 200px;
+            background: linear-gradient(to bottom, #8B4513, #A0522D);
+            border-radius: 30px 30px 10px 10px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .bottle:hover {
+            transform: translateY(-10px) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .bottle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px 30px 0 0;
+        }
+
+        .bottle::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+        }
+
+        .bottle-neck {
+            width: 30px;
+            height: 50px;
+            background: linear-gradient(to bottom, #8B4513, #A0522D);
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .bottle-cork {
+            width: 40px;
+            height: 15px;
+            background: #5D4037;
+            position: absolute;
+            top: -65px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .bottle-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #fff;
+            opacity: 0.9;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .bubble {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .bubble:nth-child(1) {
+            top: 20%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .bubble:nth-child(2) {
+            top: 40%;
+            left: 70%;
+            animation-delay: 0.5s;
+        }
+
+        .bubble:nth-child(3) {
+            top: 70%;
+            left: 30%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.1); }
+        }
+
+        .hidden-chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .hidden-chat-container.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .chat-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chat-message {
+            padding: 12px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+            line-height: 1.4;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-chat-message {
+            align-self: flex-end;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot-chat-message {
+            align-self: flex-start;
+            background: #f1f1f1;
+            color: #333;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .chat-input button {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .chat-input button:hover {
+            transform: scale(1.1);
+        }
+
+        .hint {
+            text-align: center;
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--dark);
+            animation: pulse 2s infinite;
+            font-size: 0.9rem;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .voice-toggle {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .registration-form {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 10px 25px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+            
+            .hidden-chat-container {
+                width: 300px;
+                height: 450px;
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Women Empowerment & Cyber Security</h1>
+                <p>Together Towards a Safer and Stronger Digital World</p>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#threats">Threats</a></li>
+                <li><a href="#tips">Safety Tips</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#registration">Register</a></li>
+                <li><a href="#ai-assistant">AI Assistant</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>Empower. Educate. Protect.</h2>
+            <p>Join us in creating a safer digital space for women everywhere. Learn how to protect yourself online and empower others with knowledge.</p>
+            <a href="#registration" class="btn">Register Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Digital Safety</h2>
+                <p>Understanding the importance of cyber security in women's empowerment</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Why Digital Safety Matters for Women</h3>
+                    <p>In today's interconnected world, digital literacy and online safety are essential components of women's empowerment. As more women access digital platforms for education, work, and social connection, understanding cyber threats becomes crucial.</p>
+                    <p>Cyber security isn't just about technology—it's about creating safe spaces where women can express themselves, pursue opportunities, and connect with others without fear of harassment, stalking, or exploitation.</p>
+                    <p>By educating women about digital safety, we're not just protecting individuals; we're strengthening communities and ensuring that the digital revolution benefits everyone equally.</p>
+                    <a href="#tips" class="btn">Safety Tips</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Women and Technology">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration" id="registration">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join Our Program</h2>
+                <p>Register for our Women Cyber Safety Empowerment Program</p>
+            </div>
+            <div class="registration-form">
+                <form action="process-contact.php" method="POST" id="registrationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age *</label>
+                            <input type="number" id="age" name="age" class="form-control" placeholder="Enter your age" min="16" max="100" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="education">Education Level *</label>
+                        <select id="education" name="education" class="form-control" required>
+                            <option value="">Select your education level</option>
+                            <option value="highschool">High School</option>
+                            <option value="bachelor">Bachelor's Degree</option>
+                            <option value="master">Master's Degree</option>
+                            <option value="phd">PhD</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Area of Interest</label>
+                        <select id="interest" name="interest" class="form-control">
+                            <option value="">Select your interest</option>
+                            <option value="cyber-safety">Cyber Safety Basics</option>
+                            <option value="social-media">Social Media Safety</option>
+                            <option value="online-harassment">Dealing with Online Harassment</option>
+                            <option value="privacy">Data Privacy Protection</option>
+                            <option value="all">All of the Above</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Why do you want to join our program? *</label>
+                        <textarea id="message" name="message" class="form-control" placeholder="Tell us about your interest in cyber safety and how you think this program will help you..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Submit Registration
+                    </button>
+                    
+                    <p style="text-align: center; margin-top: 15px; color: #666; font-size: 14px;">
+                        Your information will be stored securely in our database and used only for program purposes.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Threats Section -->
+    <section class="threats" id="threats">
+        <div class="container">
+            <div class="section-title">
+                <h2>Common Cyber Threats</h2>
+                <p>Understanding these threats is the first step toward protection</p>
+            </div>
+            <div class="threats-grid">
+                <div class="threat-card">
+                    <div class="threat-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Cyberbullying</h3>
+                    <p>Harassment, humiliation, or threats through digital platforms, often targeting women specifically.</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Identity Theft</h3>
+                    <p>Stealing personal information to impersonate or commit fraud using someone else's identity.</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">
+                        <i class="fas fa-binoculars"></i>
+                    </div>
+                    <h3>Online Stalking</h3>
+                    <p>Persistent monitoring and harassment through digital means, creating fear and insecurity.</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Phishing</h3>
+                    <p>Deceptive attempts to obtain sensitive information by disguising as trustworthy entities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips" id="tips">
+        <div class="container">
+            <div class="section-title">
+                <h2>Online Safety Tips</h2>
+                <p>Practical steps to protect yourself in the digital world</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Use Strong Passwords</h3>
+                        <p>Create unique, complex passwords for each account and consider using a password manager.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Enable Two-Factor Authentication</h3>
+                        <p>Add an extra layer of security to your accounts with 2FA wherever possible.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Be Cautious with Personal Information</h3>
+                        <p>Think carefully before sharing personal details online and adjust privacy settings.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Recognize and Report Abuse</h3>
+                        <p>Learn to identify online harassment and know how to report it to platform administrators.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Secure Your Connections</h3>
+                        <p>Avoid using public Wi-Fi for sensitive transactions and use a VPN when necessary.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h3>Keep Software Updated</h3>
+                        <p>Regularly update your devices and applications to protect against security vulnerabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <div class="section-title">
+                <h2>Helpful Resources</h2>
+                <p>Where to find help and report cyber crimes</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Cyber Crime Portal</h3>
+                    <p>Report cyber crimes at the official government portal</p>
+                    <a href="https://cybercrime.gov.in" class="btn" target="_blank">Visit Website</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>National Commission for Women</h3>
+                    <p>Support and resources for women's rights and safety</p>
+                    <a href="https://www.ncw.gov.in/" class="btn" target="_blank">Visit Website</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Women Helpline</h3>
+                    <p>24/7 support for women in distress</p>
+                    <a href="tel:1091" class="btn">Call 1091</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>Local Cyber Cells</h3>
+                    <p>Contact your local police cyber cell for assistance</p>
+                    <a href="#" class="btn">Find Local Help</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mystery Bottle Section -->
+    <section class="tips" id="mystery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Digital Mystery</h2>
+                <p>Discover hidden secrets in the digital world - just like uncovering treasures in cyberspace</p>
+            </div>
+            <div class="bottle-container">
+                <div class="bottle" id="mysteryBottle">
+                    <div class="bottle-neck"></div>
+                    <div class="bottle-cork"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bottle-message">👀</div>
+                </div>
+                <p class="hint">Click the bottle to discover a hidden cyber safety assistant...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section class="ai-assistant" id="ai-assistant">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cyber Safety Assistant</h2>
+                <p>Get answers to your cyber security questions</p>
+            </div>
+            <div class="chat-container">
+                <div class="chat-box" id="chat-box">
+                    <div class="message bot-message">
+                        Hello! I'm your Cyber Safety Assistant. How can I help you with online safety today?
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Ask about online safety...">
+                    <button class="btn" id="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Women Empowerment & Cyber Security</h2>
+                    <p>Together Towards a Safer and Stronger Digital World</p>
+                </div>
+                <div class="footer-quote">
+                    <p>"Empowered Women Empower the Digital World"</p>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Women Empowerment & Cyber Security Awareness. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden Chat Container -->
+    <div class="hidden-chat-container" id="chatContainer">
+        <div class="chat-header">
+            <h3><i class="fas fa-robot"></i> Cyber Safety Assistant</h3>
+            <button class="close-btn" id="closeChat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask about online safety...">
+            <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <button class="voice-toggle" id="voiceToggle" title="Toggle Text-to-Speech">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        // Mobile Navigation Toggle
+        $('#hamburger').click(function() {
+            $('#nav-menu').toggleClass('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        $('.nav-menu a').click(function() {
+            $('#nav-menu').removeClass('active');
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on('click', function(e) {
+            e.preventDefault();
+            const target = $(this.getAttribute('href'));
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 80
+                }, 1000);
+            }
+        });
+
+        // Form validation
+        $('#registrationForm').submit(function(e) {
+            let phone = $('#phone').val();
+            let age = $('#age').val();
+            let isValid = true;
+
+            // Phone validation
+            if(phone.length < 10 || !/^\d+$/.test(phone)) {
+                alert('Please enter a valid phone number (at least 10 digits)');
+                isValid = false;
+            }
+            
+            // Age validation
+            if(age < 16 || age > 100) {
+                alert('Please enter a valid age (16-100 years)');
+                isValid = false;
+            }
+
+            if(!isValid) {
+                e.preventDefault();
+            }
+        });
+
+        // Simple AI Assistant (main one)
+        $('#send-btn').click(function() {
+            const userInput = $('#user-input').val();
+            if (userInput.trim() !== '') {
+                // Add user message
+                $('#chat-box').append('<div class="message user-message">' + userInput + '</div>');
+                $('#user-input').val('');
+                
+                // Add bot response
+                setTimeout(function() {
+                    $('#chat-box').append('<div class="message bot-message">Thanks for your question about: ' + userInput + '. For detailed cyber safety advice, feel free to explore our resources section.</div>');
+                    $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
+                }, 1000);
+                
+                $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
+            }
+        });
+
+        // Enter key support for chat
+        $('#user-input').keypress(function(e) {
+            if (e.which === 13) {
+                $('#send-btn').click();
+            }
+        });
+
+        // ===== HIDDEN BOTTLE CHATBOT FUNCTIONALITY =====
+        const mysteryBottle = document.getElementById('mysteryBottle');
+        const chatContainer = document.getElementById('chatContainer');
+        const closeChat = document.getElementById('closeChat');
+        const chatMessages = document.getElementById('chatMessages');
+        const userInputField = document.getElementById('userInput');
+        const sendMessage = document.getElementById('sendMessage');
+        const voiceToggle = document.getElementById('voiceToggle');
+        
+        // State variables
+        let isVoiceEnabled = true;
+        let speechSynth = window.speechSynthesis;
+        
+        // Bottle click event
+        if (mysteryBottle) {
+            mysteryBottle.addEventListener('click', () => {
+                if (chatContainer) {
+                    chatContainer.classList.add('active');
+                    addChatMessage("Hello! I'm your hidden Cyber Safety Assistant. You found me! How can I help you with online safety today?", 'bot');
+                    speakMessage("Hello! I'm your hidden Cyber Safety Assistant. You found me! How can I help you with online safety today?");
+                }
+            });
+        }
+        
+        // Close chat event
+        if (closeChat) {
+            closeChat.addEventListener('click', () => {
+                if (chatContainer) {
+                    chatContainer.classList.remove('active');
+                    if (speechSynth) {
+                        speechSynth.cancel();
+                    }
+                }
+            });
+        }
+        
+        // Send message event
+        if (sendMessage) {
+            sendMessage.addEventListener('click', sendUserMessage);
+        }
+        
+        if (userInputField) {
+            userInputField.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendUserMessage();
+                }
+            });
+        }
+        
+        // Toggle voice event
+        if (voiceToggle) {
+            voiceToggle.addEventListener('click', () => {
+                isVoiceEnabled = !isVoiceEnabled;
+                voiceToggle.innerHTML = isVoiceEnabled ? 
+                    '<i class="fas fa-volume-up"></i>' : 
+                    '<i class="fas fa-volume-mute"></i>';
+            });
+        }
+        
+        // Function to send user message
+        function sendUserMessage() {
+            if (!userInputField) return;
+            
+            const message = userInputField.value.trim();
+            if (message === '') return;
+            
+            // Add user message to chat
+            addChatMessage(message, 'user');
+            userInputField.value = '';
+            
+            // Generate and add bot response
+            setTimeout(() => {
+                const response = generateChatResponse(message);
+                addChatMessage(response, 'bot');
+                if (isVoiceEnabled && speechSynth) {
+                    speakMessage(response);
+                }
+            }, 1000);
+        }
+        
+        // Function to add message to chat
+        function addChatMessage(text, sender) {
+            if (!chatMessages) return;
+            
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message', $sender-chat-message);
+            messageElement.textContent = text;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Function to generate bot response
+        function generateChatResponse(userMessage) {
+            const lowerMessage = userMessage.toLowerCase();
+            
+            if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
+                return "Hello there! I'm your hidden cyber safety guide. What would you like to know about staying safe online?";
+            } else if (lowerMessage.includes('password') || lowerMessage.includes('security')) {
+                return "Strong passwords are your first line of defense! Use a mix of letters, numbers, and symbols. Consider a password manager for extra security.";
+            } else if (lowerMessage.includes('phishing') || lowerMessage.includes('scam')) {
+                return "Phishing attacks try to trick you into sharing personal info. Always check sender addresses and never click suspicious links in emails.";
+            } else if (lowerMessage.includes('privacy') || lowerMessage.includes('data')) {
+                return "Protect your privacy by reviewing app permissions, using privacy settings on social media, and being careful what you share online.";
+            } else if (lowerMessage.includes('social media') || lowerMessage.includes('facebook') || lowerMessage.includes('instagram')) {
+                return "On social media: set profiles to private, be mindful of what you share, and think twice before posting location information.";
+            } else if (lowerMessage.includes('harassment') || lowerMessage.includes('bullying')) {
+                return "If you experience online harassment: document everything, block the person, report to platform moderators, and tell someone you trust.";
+            } else if (lowerMessage.includes('help') || lowerMessage.includes('advice')) {
+                return "I can help with password security, phishing protection, privacy settings, social media safety, and handling online harassment. What do you need?";
+            } else if (lowerMessage.includes('women') || lowerMessage.includes('female')) {
+                return "Women often face specific online threats like targeted harassment. It's important to know how to protect your digital identity and report abuse.";
+            } else if (lowerMessage.includes('bye') || lowerMessage.includes('goodbye')) {
+                return "Stay safe online! Remember to be cautious with personal information and report any suspicious activity. Goodbye!";
+            } else {
+                const responses = [
+                    "That's an interesting question about online safety. Could you be more specific?",
+                    "I specialize in cyber security for women. Ask me about passwords, privacy, or online harassment.",
+                    "The digital world can be tricky to navigate. What specific safety concern do you have?",
+                    "I'm here to help with your cyber safety questions. What would you like to know?",
+                    "Online safety is important for everyone. What aspect are you curious about?"
+                ];
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+        }
+        
+        // Function to speak message
+        function speakMessage(text) {
+            if (!isVoiceEnabled || !speechSynth) return;
+            
+            speechSynth.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 0.9;
+            utterance.pitch = 0.8;
+            utterance.volume = 0.8;
+            speechSynth.speak(utterance);
+        }
+        
+        // Add visual effects to the bottle
+        if (mysteryBottle) {
+            mysteryBottle.addEventListener('mouseenter', () => {
+                mysteryBottle.style.transform = 'translateY(-10px) rotate(5deg)';
+            });
+            
+            mysteryBottle.addEventListener('mouseleave', () => {
+                mysteryBottle.style.transform = 'translateY(0) rotate(0)';
+            });
+        }
+    });
+    </script>
+</body>
+</html>
